@@ -3,6 +3,8 @@ from flask import render_template
 
 
 @app.route('/')
-@app.route('/home')
-def home():
-    return 'This is home'
+@app.route('/join')
+def index():
+    return render_template('index.html', title='Join Video')
+
+
