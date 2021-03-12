@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
-{% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
     <div class="row">
         <div class="col-md-9">
+            <p id="count"></p>
             <p>
-                Video will go here...
+                <div id="local" class="join_participant"><div></div></div>
             </p>
         </div>
         <div class="col-md-3">
-            <!-- {{ wtf.quick_form(form) }} -->
             <form action="" method="post" novalidate>
                 {{ form.hidden_tag() }}
                 <p>

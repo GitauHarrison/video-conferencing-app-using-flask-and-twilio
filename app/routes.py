@@ -10,6 +10,6 @@ def index():
     return render_template('index.html', title='Join Video', form=form)
 
 
-@app.route('/home', methods=['POST'])
+@app.route('/home')
 def home():
-    render_template('home.html', title='Home')
+    return render_template('home.html', title='Home')
