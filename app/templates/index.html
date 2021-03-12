@@ -10,12 +10,14 @@
         </div>
         <div class="col-md-3">
             <!-- {{ wtf.quick_form(form) }} -->
-            <form>
-                <label for="username">Name: </label><br>
-                <input type="text" name=”username” id="username"><br>
-                <button id="join_leave">Join call</button>
+            <form action="" method="post" novalidate>
+                {{ form.hidden_tag() }}
+                <p>
+                    {{ form.username.label }}<br>
+                    {{ form.username(size=32, class="username") }}
+                </p>
+                <p>{{ form.submit(id="join_leave") }}</p>
             </form>
-    
         </div>
     </div>
 {% endblock %}
