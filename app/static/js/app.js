@@ -110,5 +110,14 @@ function trackUnsubscribed(track){
     track.detach().forEach(element => element.remove());
 };
 
+function disconnect(){
+    room.disconnect();
+    while (container.lastChild.id != 'local')
+        container.removeChild(container.lastChild);
+    button.innerHTML = 'Join Call';
+    connected = false;
+    updateParticipantCount();
+};
+
 addLocalVideo();
 button.addEventListener('click', connectButtonHandler);
