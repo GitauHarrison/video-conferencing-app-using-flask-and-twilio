@@ -98,5 +98,14 @@ function participantConnected(participant){
 };
 
 
+
+function trackSubscribed(div, track){
+    div.appendChild(track.attach());
+};
+
+function trackUnsubscribed(track){
+    track.detach().forEach(element => element.remove());
+};
+
 addLocalVideo();
 button.addEventListener('click', connectButtonHandler);
