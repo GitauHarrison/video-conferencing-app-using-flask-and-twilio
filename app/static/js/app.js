@@ -97,7 +97,10 @@ function participantConnected(participant){
     updateParticipantCount();
 };
 
-
+function participantDisconnected(participant){
+    document.getElementById(participant.sid).remove();
+    updateParticipantCount();
+};
 
 function trackSubscribed(div, track){
     div.appendChild(track.attach());
