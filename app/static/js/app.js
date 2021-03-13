@@ -42,5 +42,30 @@ function connectButtonHandler(event){
     }
 };
 
+function connect(username){
+    let promise = new Promise((resolve, reject) => {
+        // get token from the backend
+        fetch('/login', {
+            method: 'POST',
+            body: JSON.stringify({'username': username})
+        }).then(res => res.json()).then(data => {
+            // join video call
+            return Twilio.Video.connect(data.token);
+        }).then(_room => {
+            room = _room;
+            room.participants.forEach(participantConnected);
+            room.on('participantConnected', participantConnected);
+            room.on('participantDisconnected', participantDisconnected);
+            connected = true;
+            updateParticipantCount();
+            resolve();
+        }).catch(() => {
+            reject();
+        });
+    });
+    return promise;
+};
+
+
 addLocalVideo();
 button.addEventListener('click', connectButtonHandler);
