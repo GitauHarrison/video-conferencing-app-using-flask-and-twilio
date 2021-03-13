@@ -100,3 +100,4 @@ Copy the `https//:` url to another device, say your smartphone or another comput
 1. If you do not know what `ngrok` is or how to use it, consider to [look here](https://gitauharrison-blog.herokuapp.com/ngrok) for more information.
 2. Virtualenvwrapper makes creating, activating and generally using virtual environments a lot easier. Learn more [here](https://gitauharrison-blog.herokuapp.com/virtualenvwrapper).
 3. If you are new to flask, [begin here](https://gitauharrison-blog.herokuapp.com/personal-blog).
+4. If you would like to build this project from scratch rather than run the contents of this repo, learn how to do that [here](https://github.com/GitauHarrison/notes/blob/master/video_call_app.md).
