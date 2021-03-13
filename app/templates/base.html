@@ -57,5 +57,5 @@
 {% block scripts %}
     {{ super() }}
     <script src="//media.twiliocdn.com/sdk/js/video/releases/2.3.0/twilio-video.min.js"></script>
-    <script src=" {{ url_for('static', filename='js/app.js') }} "></script>
+    <script type="text/javascript" src=" {{ url_for('static', filename='js/app.js') }} "></script>
 {% endblock %}
