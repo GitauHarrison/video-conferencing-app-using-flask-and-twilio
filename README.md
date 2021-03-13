@@ -3,7 +3,7 @@
 With the impact of Covid-19 forcing many people to work from home, the use of video conferencing apps such as Zoom and Google Meet (among many others) has shot up. This is an attempt to create a similar video conferencing application using Flask and Twilio :sweat_smile:.
 
 ### Tools Used
-* Python and vanilla JavaScript for programming:
+* Python and vanilla JavaScript for programming
 * Flask Web framework
 * Twilio Programmable Video for the backend
 * Ngrok for temporary `HTTP` provision
@@ -67,9 +67,9 @@ $ mkvirtualenv ona_ana_video_app # I am using virtualenvwrapper
 
 Once your application is running, you can access your localhost on http://127.0.0.1:5000/. Additionally, if you look carefully in your terminal, you will see * Tunnel URL: NgrokTunnel: "http://4209c9af6d43.ngrok.io" -> "http://localhost:5000"
 
-The HTTP value may be different from the one shown here because I am using the free tier package of ngrok. Paste the link http://4209c9af6d43.ngrok.io on another device, say your mobile phone, to test the application while it is on localhost.
+The HTTP value may be different from the one shown here because I am using the free tier package of `ngrok`. Paste the link http://4209c9af6d43.ngrok.io on another device, say your mobile phone, to test the application while it is on localhost.
 
-Most web browsers do not allow `htpp//:` when working with video calls. Therefore we need to generate a public URL that redirects to the application. 
+Most web browsers do not allow `http//:` when working with video calls. Therefore we need to generate a public URL that redirects to the application. 
 
 Open a new terminal window (consider [byobu](https://www.byobu.org/)) and run `ngrok`:
 
