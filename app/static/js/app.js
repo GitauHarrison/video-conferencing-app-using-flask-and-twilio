@@ -73,6 +73,29 @@ function updateParticipantCount(){
         count.innerHTML = (room.participants.size + 1) + 'participants online.';
 };
 
+function participantConnected(participant){
+    let participantDiv = document.createElement('div');
+    participantDiv.setAttribute('id', participant.sid);
+    participantDiv.setAttribute('class', 'participant');
+
+    let tracksDiv = document.createElement('div');
+    participantDiv.appendChild(tracksDiv);
+
+    let labelDiv = document.createElement('div');
+    labelDiv.innerHTML = participant.identity;
+    participantDiv.appendChild(labelDiv);
+
+    container.appendChild(participantDiv);
+
+    participant.tracks.forEach(publication => {
+        if (publication.isSubscribed)
+            trackSubscribed(tracksDiv, publication.track);
+    });
+    participant.on('trackSubscribed', track => trackSubscribed(tracksDiv, track));
+    participant.on('trackUnsubscribed', trackUnsubscribed);
+
+    updateParticipantCount();
+};
 
 
 addLocalVideo();
