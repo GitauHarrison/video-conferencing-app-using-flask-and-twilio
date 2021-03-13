@@ -66,6 +66,14 @@ function connect(username){
     return promise;
 };
 
+function updateParticipantCount(){
+    if (!connected)
+        count.innerHTML = 'Disconnected';
+    else
+        count.innerHTML = (room.participants.size + 1) + 'participants online.';
+};
+
+
 
 addLocalVideo();
 button.addEventListener('click', connectButtonHandler);
