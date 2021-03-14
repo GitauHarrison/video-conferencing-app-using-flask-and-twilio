@@ -73,9 +73,9 @@ Once your application is running, you can access your localhost on http://127.0.
 
 The HTTP value may be different from the one shown here because I am using the free tier package of `ngrok`. Paste the link http://4209c9af6d43.ngrok.io on another device, say your mobile phone, to test the application while it is on localhost.
 
-Most web browsers do not allow `http//:` when working with video calls. Therefore we need to generate a public URL that redirects to the application. 
+Most web browsers do not allow `http//:` when working with video calls. Therefore we need to generate a secure public URL that redirects to the application. 
 
-Open a new terminal window (consider [byobu](https://www.byobu.org/)) and run `ngrok`:
+Open a new terminal window (consider using [byobu](https://www.byobu.org/)) and run `ngrok`:
 
 ```python
 (ona_ana_video_app)$ ngrok http 5000
