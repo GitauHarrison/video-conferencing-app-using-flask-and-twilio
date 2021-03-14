@@ -102,7 +102,7 @@ Copy the `https//:` url to another device, say your smartphone or another comput
 
 ### Call For Collaboration
 
-My intention is to eventually  have an app with better security and far simpler intuitive design as seen [here](https://www.figma.com/proto/kDRrcS8b0OJywkhH0Qm4LQ/Ona-Ana-Video-App?node-id=4%3A16&scaling=min-zoom). If you would be interested in this, please feel free to reach out, and let us build an amazing video conferencing application.
+My intention is to eventually  have an app with better security and far simpler intuitive design as seen [here](https://www.figma.com/proto/kDRrcS8b0OJywkhH0Qm4LQ/Ona-Ana-Video-App?node-id=3%3A2&scaling=min-zoom). If you would be interested in this, please feel free to reach out, and let us build an amazing video conferencing application.
 
 ### Reference
 1. If you do not know what `ngrok` is or how to use it, consider to [look here](https://gitauharrison-blog.herokuapp.com/ngrok) for more information.
