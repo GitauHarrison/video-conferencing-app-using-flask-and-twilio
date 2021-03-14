@@ -66,7 +66,7 @@ function updateParticipantCount() {
     if (!connected)
         count.innerHTML = 'Disconnected.';
     else
-        count.innerHTML = (room.participants.size + 1) + ' participants online.';
+        count.innerHTML = (room.participants.size + 1) + ' participants online';
 };
 
 
