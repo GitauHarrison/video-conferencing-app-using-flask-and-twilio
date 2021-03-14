@@ -10,10 +10,11 @@
 }
 .participant div {
     text-align: center;
+    font-size: 30px;
 }
 .participant div:first-child {
-    width: 240px;
-    height: 180px;
+    width: 320px;
+    height: 250px;
     background-color: #F6F3F3;
     border: 1px solid #F5F5F5;
 }
@@ -26,8 +27,22 @@
 }
 
 /* General Styling */
-.title, .btn, #count{
+.title, .my_form, #count{
     text-align: center;
     padding-bottom: 20px;
     padding-top: 20px;
+}
+.btn{
+    border: 1px solid #F2F2F2;
+    color: black;
+}
+h1{
+    font-size: 50px;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+
+}
+p{
+    font-size: 30px;
 }
