@@ -5,10 +5,12 @@ dominate==2.6.0
 Flask==1.1.2
 Flask-Bootstrap==3.3.7.1
 Flask-WTF==0.14.3
+gunicorn==20.0.4
 idna==2.10
 itsdangerous==1.1.0
 Jinja2==2.11.3
 MarkupSafe==1.1.1
+psycopg2==2.8.6
 PyJWT==1.7.1
 pyngrok==5.0.4
 python-dotenv==0.15.0
