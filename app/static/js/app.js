@@ -1,7 +1,6 @@
 let connected = false;
 const usernameInput = document.getElementById('username');
-const button = document.getElementById('join');
-const leave_call = document.getElementById('leave');
+const button = document.getElementById('join_leave');
 const container = document.getElementById('video_container');
 const count = document.getElementById('count');
 let room;
@@ -13,38 +12,35 @@ function addLocalVideo(){
     });
 };
 
-function connectButtonHandler(event){
+function connectButtonHandler(event) {
     event.preventDefault();
     if (!connected) {
         let username = usernameInput.value;
-        if (!username){
-            alert('Enter your username before connecting');
+        if (!username) {
+            alert('Enter your name before connecting');
             return;
         }
         button.disabled = true;
         button.innerHTML = 'Connecting...';
-        window.location='/home';
-        connect(username).then(() => {
-            leave_call.innerHTML = 'Leave Call';
-            button.disabled = false;
+        connect(username).then(() => {                
+            button.innerHTML = 'Leave call';
+            button.disabled = false;            
         }).catch(() => {
-            alert('Connection failed. Is the backend working?');
-            button.innerHTML = 'Join Call';
-            button.disabled = false;
-            window.location='/join';
+            alert('Connection failed. Is the backend running?');   
+            button.innerHTML = 'Join call';
+            button.disabled = false; 
         });
     }
-    else{
+    else {
         disconnect();
-        button.innerHTML = 'Join Call';
-        window.location='/join';
+        button.innerHTML = 'Join call';
         connected = false;
     }
 };
 
-function connect(username){
+function connect(username) {
     let promise = new Promise((resolve, reject) => {
-        // get token from the backend
+        // get a token from the back end
         fetch('/login', {
             method: 'POST',
             body: JSON.stringify({'username': username})
@@ -66,14 +62,15 @@ function connect(username){
     return promise;
 };
 
-function updateParticipantCount(){
+function updateParticipantCount() {
     if (!connected)
-        count.innerHTML = 'Disconnected';
+        count.innerHTML = 'Disconnected.';
     else
-        count.innerHTML = (room.participants.size + 1) + 'participants online.';
+        count.innerHTML = (room.participants.size + 1) + ' participants online.';
 };
 
-function participantConnected(participant){
+
+function participantConnected(participant) {
     let participantDiv = document.createElement('div');
     participantDiv.setAttribute('id', participant.sid);
     participantDiv.setAttribute('class', 'participant');
@@ -97,24 +94,24 @@ function participantConnected(participant){
     updateParticipantCount();
 };
 
-function participantDisconnected(participant){
+function participantDisconnected(participant) {
     document.getElementById(participant.sid).remove();
     updateParticipantCount();
 };
 
-function trackSubscribed(div, track){
+function trackSubscribed(div, track) {
     div.appendChild(track.attach());
 };
 
-function trackUnsubscribed(track){
+function trackUnsubscribed(track) {
     track.detach().forEach(element => element.remove());
 };
 
-function disconnect(){
+function disconnect() {
     room.disconnect();
     while (container.lastChild.id != 'local')
         container.removeChild(container.lastChild);
-    button.innerHTML = 'Join Call';
+    button.innerHTML = 'Join call';    
     connected = false;
     updateParticipantCount();
 };
