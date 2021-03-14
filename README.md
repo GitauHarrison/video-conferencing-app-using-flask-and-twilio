@@ -2,11 +2,14 @@
 
 With the impact of Covid-19 forcing many people to work from home, the use of video conferencing apps such as Zoom and Google Meet (among many others) has shot up. This is an attempt to create a similar video conferencing application using Flask and Twilio :sweat_smile:.
 
+![Ona Ana Video App](app/static/img/ona_ana.gif)
+
 ### Tools Used
 * Python and vanilla JavaScript for programming
 * Flask Web framework
 * Twilio Programmable Video for the backend
 * Ngrok for temporary `HTTP` provision
+* Heroku for hosting
 
 ### Features
 * Basic user authentication before accessing a video call room
@@ -15,9 +18,10 @@ With the impact of Covid-19 forcing many people to work from home, the use of vi
 * Access to all participants audio while in the call
 * Display of participants names in the video call
 * Display of number of participants in a call before joining
+* User can disconnect from the video call
 
 ### Deployed Application
-* [Ona Ana Video Conferencing App]()
+* [Ona Ana Video Conferencing App](https://ona-ana-video-app.herokuapp.com/)
 
 ### Testing
 
@@ -95,6 +99,10 @@ Connections                   ttl     opn     rt1     rt5     p50     p90
 Note the lines beginning with 'Forwarding'. These show the public URLs that ngrok uses to redirect requests into our service. We will make use of the `https//:` URL.
 
 Copy the `https//:` url to another device, say your smartphone or another computer. You should be able to access the application. Click the 'Join Call' button to test it out.
+
+### Call For Collaboration
+
+My intention is to eventually  have an app with better security and far simpler intuitive design as seen [here](https://www.figma.com/proto/kDRrcS8b0OJywkhH0Qm4LQ/Ona-Ana-Video-App?node-id=4%3A16&scaling=min-zoom). If you would be interested in this, please feel free to reach out, and let us build an amazing video conferencing application.
 
 ### Reference
 1. If you do not know what `ngrok` is or how to use it, consider to [look here](https://gitauharrison-blog.herokuapp.com/ngrok) for more information.
