@@ -27,7 +27,7 @@ With the impact of Covid-19 forcing many people to work from home, the use of vi
 
 To successfully test this application, ensure you have the following first:
 
-* A Twilio account. Create a [free Twilio account](www.twilio.com/referral/WNPWrR) now.
+* A Twilio account. Create a [free Twilio account](https://www.twilio.com/try-twilio?promo=WNPWrR) now.
 * A web browser compatible with the Twilio Programmable Video JavaScript library. Check your browser among [this list](https://www.twilio.com/docs/video/javascript).
 * Python 3.6 and above.
 * This project makes use of `Ngrok`. Ngrok provides public URLs that redirect to the application. If you do not know what it is or how to use it, refer to the reference section at the end of this article.
