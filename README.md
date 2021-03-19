@@ -75,15 +75,12 @@ $ mkvirtualenv ona_ana_video_app # I am using virtualenvwrapper
 (ona_ana_video_app)$ touch .env
 ```
 
-6. Update the `.env` file with all the necessary details.
+6. Update the `.env` file with all the necessary details. Here is a sample:
 
 ```python
-MAIL_SERVER=
-MAIL_PORT=
-MAIL_USE_TLS=
-MAIL_USERNAME=
-MAIL_PASSWORD=
-ADMINS=
+TWILIO_ACCOUNT_SID=
+TWILIO_API_KEY_SID=
+TWILIO_API_KEY_SECRET=
 ```
 
 7. Fire up the flask server:
