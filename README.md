@@ -23,9 +23,9 @@ With the impact of Covid-19 forcing many people to work from home, the use of vi
 ### Deployed Application
 * [Ona Ana Video Conferencing App](https://ona-ana-video-app.herokuapp.com/)
 
-### Testing
+### Testing Locally
 
-To successfully test this application, ensure you have the following first:
+To successfully test this application locally, ensure you have the following first:
 
 * A Twilio account. Create a [free Twilio account](https://www.twilio.com/try-twilio?promo=WNPWrR) now.
 * A web browser compatible with the Twilio Programmable Video JavaScript library. Check your browser among [this list](https://www.twilio.com/docs/video/javascript).
@@ -41,7 +41,7 @@ Once you have an account with Twilio:
 
 Note that when you save your keys, the API Secret Key will never be shown again. Make sure to save it somewhere else safe because you will need to use it.
 
-Following the `.env.template` format seen in the project's root directory, add these keys including your Twilio Account SID  seen from the [Dashboard Console](https://www.twilio.com/console).
+Following the `.env.template` format seen in the project's root directory, add these keys (including your Twilio Account SID  seen from the [Dashboard Console](https://www.twilio.com/console)) to your environment variables.
 
 Now you are ready to run this application from your terminal.
 
