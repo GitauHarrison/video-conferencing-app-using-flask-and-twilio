@@ -51,19 +51,42 @@ Now you are ready to run this application from your terminal.
 $ git@github.com:GitauHarrison/video-conferencing-app-using-flask-and-twilio.git
 ```
 
-2. Create and activate your virtual environment:
+2. Move into the cloned directory:
+
+```python
+$ cd video-conferencing-app-using-flask-and-twilio
+```
+
+3. Create and activate your virtual environment:
 
 ```python
 $ mkvirtualenv ona_ana_video_app # I am using virtualenvwrapper
 ```
 
-3. Install all the project requirements within your virtual environment:
+4. Install all the project requirements within your virtual environment:
 
 ```python
 (ona_ana_video_app)$ pip3 install requirements.txt
 ```
 
-4. Fire up the flask server:
+5. Before you can run your server, remember to create a `.env` file following the guidance seen in the `.env.template`. Create a `.env` file in the root directory:
+
+```python
+(ona_ana_video_app)$ touch .env
+```
+
+6. Update the `.env` file with all the necessary details.
+
+```python
+MAIL_SERVER=
+MAIL_PORT=
+MAIL_USE_TLS=
+MAIL_USERNAME=
+MAIL_PASSWORD=
+ADMINS=
+```
+
+7. Fire up the flask server:
 
 ```python
 (ona_ana_video_app)$ flask run
@@ -104,7 +127,7 @@ Copy the `https//:` url to another device, say your smartphone or another comput
 
 My intention is to eventually  have an app with better security and far simpler intuitive design. If you would be interested in this, please feel free to reach out, and let us build an amazing video conferencing application.
 
-Click [this design](https://www.figma.com/proto/kDRrcS8b0OJywkhH0Qm4LQ/Ona-Ana-Video-App?node-id=3%3A2&scaling=min-zoom) to see more.
+Check [this design](https://www.figma.com/proto/kDRrcS8b0OJywkhH0Qm4LQ/Ona-Ana-Video-App?node-id=3%3A2&scaling=min-zoom) to see more.
 
 ### Reference
 1. If you do not know what `ngrok` is or how to use it, consider to [look here](https://gitauharrison-blog.herokuapp.com/ngrok) for more information.
