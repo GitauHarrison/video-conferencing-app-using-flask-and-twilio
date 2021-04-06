@@ -3,6 +3,8 @@ const usernameInput = document.getElementById('username');
 const button = document.getElementById('join_leave');
 const container = document.getElementById('video_container');
 const count = document.getElementById('count');
+const shareScreen = document.getElementById('share_screen');
+var screenTrack;
 let room;
 
 function addLocalVideo(){
@@ -24,7 +26,8 @@ function connectButtonHandler(event) {
         button.innerHTML = 'Connecting...';
         connect(username).then(() => {                
             button.innerHTML = 'Leave call';
-            button.disabled = false;            
+            button.disabled = false;
+            shareScreen.disabled = false;        
         }).catch(() => {
             alert('Connection failed. Is the backend running?');   
             button.innerHTML = 'Join call';
@@ -35,6 +38,28 @@ function connectButtonHandler(event) {
         disconnect();
         button.innerHTML = 'Join call';
         connected = false;
+        shareScreen.innerHTML = 'Share Screen';
+        shareScreen.disabled = true;
+    }
+};
+
+function shareScreenHandler() {
+    event.preventDefault();
+    if (!screenTrack) {
+        navigator.mediaDevices.getDisplayMedia().then(stream => {
+            screenTrack = new Twilio.Video.LocalVideoTrack(stream.getTracks()[0]);
+            room.localParticipant.publishTrack(screenTrack);
+            shareScreen.innerHTML = 'Stop Sharing';
+            screenTrack.mediaStreamTrack.onended = () => { shareScreenHandler() };
+        }).catch(() => {
+            alert('Could not share screen');
+        });
+    }
+    else {
+        room.localParticipant.unpublishTrack(screenTrack);
+        screenTrack.stop();
+        screenTrack = null;
+        shareScreen.innerHTML = 'Share Screen';
     }
 };
 
@@ -119,3 +144,4 @@ function disconnect() {
 
 addLocalVideo();
 button.addEventListener('click', connectButtonHandler);
+shareScreen.addEventListener('click', shareScreenHandler);
