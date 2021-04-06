@@ -1,38 +1,41 @@
 {% extends 'base.html' %}
 
 {% block app_content %}
-        <div class="row">
-            <div class="col-md-12 title">
-                <!-- title -->
-                <h1>Ona Ana Video Conferencing App</h1>
-            </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Ona Ana Video Conferencing App</h1>
         </div>
-        <div class="row ">
-            <div class="col-md-12 my_form">
-                <!-- Join -Leave Actions -->
-                <form class="form-inline">
-                    <div class="form-group">
-                        <label class="mb-2 mr-sm-2" for="username">Username: </label>
-                        <input class="form-control mb-2 mr-sm-2" type="text" name=”username” id="username">
-                    </div>                                      
-                    <button class="btn" id="join_leave">Join call</button>
-                    <button class="btn" id="share_screen" disabled>Share Screen</button>
-                </form>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <!-- Participants Count -->
-                <p id="count">You need to join the call</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">  
-                <!-- Video Feed -->                                              
-                <div id="video_container" class="video_container">
-                    <div id="local" class="participant"><div></div class="embed-responsive embed-responsive-16by9"><div><p>Me</p></div></div>
-                    <!-- more participants will be added dynamically here -->
+    </div>
+    <div class="row">
+        <div class="col-md-12 my_form">
+            <!-- Join/Leave/Share Screen Actions -->
+            <form class="form-inline">
+                <div class="form-group">
+                    <label class="mb-2 mr-sm-2" for="username">Username: </label>
+                    <input class="form-control mb2 mr-sm-2" type="text" name="username" id="username">                    
                 </div>
+                <button class="btn" id="join_leave">Join Call</button>
+                <button class="btn" id="share_screen" disabled>Share Screen</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Participants Count -->
+            <p id="count">You need to join the call</p>
+        </div>
+    </div>
+
+    <!-- Commented the video column out so it can fit the entire view port -->
+
+    <!-- <div class="row">
+        <div class="col-md-12"> -->
+            <!-- Video Feed -->
+            <div id="video_container" class="video_container">
+                <div id="local" class="participant"><div></div><div class="label">Me</div></div>
+                <!-- More participants will be added dynamicly -->
             </div>
-        </div>        
+        <!-- </div>
+    </div> -->
+     
 {% endblock %}

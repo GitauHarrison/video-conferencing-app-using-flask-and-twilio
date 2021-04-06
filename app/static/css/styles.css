@@ -16,7 +16,7 @@
 }
 .participant div video {
     background-color: #F6F3F3;
-    border: 1px solid #F5F5F5;
+    border: 1px solid #ddd;
 }
 .participant div video:not(.participantZoomed) {
     width: 320px;
@@ -24,6 +24,7 @@
 }
 .participant .label{
     background-color: #ddd;
+    color: black;
     
 }
 .participantZoomed {
