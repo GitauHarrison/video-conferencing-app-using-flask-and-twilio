@@ -78,7 +78,8 @@ function participantConnected(participant) {
     let tracksDiv = document.createElement('div');
     participantDiv.appendChild(tracksDiv);
 
-    let labelDiv = document.createElement('div');
+    var labelDiv = document.createElement('div');
+    labelDiv.setAttribute('class', 'label')
     labelDiv.innerHTML = participant.identity;
     participantDiv.appendChild(labelDiv);
 
