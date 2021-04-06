@@ -7,10 +7,12 @@ const shareScreen = document.getElementById('share_screen');
 var screenTrack;
 let room;
 
-function addLocalVideo(){
+function addLocalVideo() {
     Twilio.Video.createLocalVideoTrack().then(track => {
-        let video = document.getElementById('local').firstChild;
-        video.appendChild(track.attach());
+        var video = document.getElementById('local').firstChild;
+        var trackElement = track.attach();
+        trackElement.addEventListener('click', () => { zoomTrack(trackElement); });
+        video.appendChild(trackElement);
     });
 };
 
@@ -126,11 +128,18 @@ function participantDisconnected(participant) {
 };
 
 function trackSubscribed(div, track) {
-    div.appendChild(track.attach());
+    var trackElement = track.attach();
+    trackElement.addEventListener('click', () => { zoomTrack(trackElement); });
+    div.appendChild(trackElement);
 };
 
 function trackUnsubscribed(track) {
-    track.detach().forEach(element => element.remove());
+    track.detach().forEach(element => {
+        if (element.classList.contains('participantZoomed')) {
+            zoomTrack(element);
+        }
+        element.remove()
+    });
 };
 
 function disconnect() {
@@ -140,6 +149,41 @@ function disconnect() {
     button.innerHTML = 'Join call';    
     connected = false;
     updateParticipantCount();
+};
+
+function zoomTrack(trackElement) {
+    if (!trackElement.classList.contains('participantZoomed')) {
+        // zoom in
+        container.childNodes.forEach(participant => {
+            if (participant.className == 'participant') {
+                participant.childNodes[0].childNodes.forEach(track => {
+                    if (track === trackElement) {
+                        track.classList.add('participantZoomed')
+                    }
+                    else {
+                        track.classList.add('participantHidden')
+                    }
+                });
+                participant.childNodes[1].classList.add('participantHidden');
+            }
+        });
+    }
+    else {
+        // zoom out
+        container.childNodes.forEach(participant => {
+            if (participant.className == 'participant') {
+                participant.childNodes[0].childNodes.forEach(track => {
+                    if (track === trackElement) {
+                        track.classList.remove('participantZoomed');
+                    }
+                    else {
+                        track.classList.remove('participantHidden');
+                    }
+                });
+                participant.childNodes[1].classList.remove('participantHidden');
+            }
+        });
+    }
 };
 
 addLocalVideo();
