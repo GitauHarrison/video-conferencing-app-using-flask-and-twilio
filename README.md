@@ -19,6 +19,11 @@ With the impact of Covid-19 forcing many people to work from home, the use of vi
 * Display of participants names in the video call
 * Display of number of participants in a call before joining
 * User can disconnect from the video call
+* Fullscreen video on click
+
+### FullScreen Feature
+
+![Full Screen](app/static/img/full_screen.gif)
 
 ### Deployed Application
 * [Ona Ana Video Conferencing App](https://ona-ana-video-app.herokuapp.com/)
