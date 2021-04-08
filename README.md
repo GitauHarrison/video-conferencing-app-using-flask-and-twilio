@@ -132,7 +132,7 @@ My intention is to eventually  have an app with better security and far simpler 
 Check [this design](https://www.figma.com/proto/kDRrcS8b0OJywkhH0Qm4LQ/Ona-Ana-Video-App?node-id=3%3A2&scaling=min-zoom) to see more.
 
 ### Reference
-1. If you do not know what `ngrok` is or how to use it, consider to [look here](https://gitauharrison-blog.herokuapp.com/ngrok) for more information.
-2. Virtualenvwrapper makes creating, activating and generally using virtual environments a lot easier. Learn more [here](https://gitauharrison-blog.herokuapp.com/virtualenvwrapper).
-3. If you are new to flask, [begin here](https://gitauharrison-blog.herokuapp.com/personal-blog).
-4. If you would like to build this project from scratch rather than run the contents of this repo, learn how to do that [here](https://github.com/GitauHarrison/notes/blob/master/video_call_app.md).
+1. If you do not know what `ngrok` is or how to use it, consider to [look here](https://github.com/GitauHarrison/notes/blob/master/localhost_testing.md) for more information.
+2. Virtualenvwrapper makes creating, activating and generally using virtual environments a lot easier. Learn more [here](https://github.com/GitauHarrison/notes/blob/master/virtualenvwrapper_setup.md).
+3. If you are new to flask, [begin here](https://github.com/GitauHarrison/notes/blob/master/web_development/personal_blog/personal_blog.md).
+4. If you would like to build this project from scratch rather than run the contents of this repo, learn how to do that [here](https://github.com/GitauHarrison/notes/blob/master/video_call_app/simple_video_call_app.md).
