@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 
 {% block app_content %}
+<div class="container">
     <div class="row">
-        <div class="col-md-12 text-center">
-            <h1>Ona Ana Video Conferencing App</h1>
+        <div class="col-md-12 title">
+            <h1>Flask & Twilio Video Conference</h1>
         </div>
     </div>
+    
     <div class="row">
         <div class="col-md-12 my_form">
             <!-- Join/Leave/Share Screen Actions -->
@@ -19,23 +21,21 @@
             </form>
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-12">
-            <!-- Participants Count -->
             <p id="count">You need to join the call</p>
         </div>
     </div>
-
-    <!-- Commented the video row out so it can fit the entire view port -->
-
+</div>
+    <!-- Comment out the row and column on video feed so it fits full screen -->
+    
     <!-- <div class="row">
         <div class="col-md-12"> -->
-            <!-- Video Feed -->
             <div id="video_container" class="video_container">
                 <div id="local" class="participant"><div></div><div class="label">Me</div></div>
-                <!-- More participants will be added dynamicly -->
+                <!-- more participants will be added dynamically here -->
             </div>
         <!-- </div>
-    </div> -->
-     
+    </div> --> 
 {% endblock %}
